@@ -33,6 +33,10 @@ public class DemoApplication {
         personDAO = new PersonDAO(entityManagerFactory);
         return "Greetings from Gradle Spring Boot Application!";
     }
+    @RequestMapping("/hello")
+    public String sayHello(@RequestParam("name") String name) {
+        return "HELLO "+name;
+    }
     @RequestMapping(value="/insert", method= RequestMethod.GET)
     public String insert(@RequestParam("name") String name,@RequestParam("email")String email,@RequestParam("age")Integer age) {
         if(personDAO==null)intialise();
