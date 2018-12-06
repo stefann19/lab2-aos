@@ -26,7 +26,6 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-
     @RequestMapping("/")
     public String intialise() {
         entityManagerFactory = Persistence.createEntityManagerFactory("NewPersistenceUnit");
@@ -51,7 +50,7 @@ public class DemoApplication {
     }
 
     @RequestMapping(value="/remove", method= RequestMethod.GET)
-    public String remove(@RequestParam("id") Integer id) {
+    public String remove(@RequestParam("id") Integer id.) {
         if(personDAO==null)intialise();
         return personDAO.removePerson(personDAO.getPersonById(id));
     }
